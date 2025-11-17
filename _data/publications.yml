@@ -1,0 +1,69 @@
+# _data/publications.yml
+# Your Publications (in reverse chronological order)
+# Note: Use double quotes for titles containing special characters
+
+- title: "A Novel Approach to Understanding Complex Systems Through Machine Learning"
+  authors:
+    - "Doe, J."
+    - "Smith, A."
+    - "Johnson, B."
+  journal: "Journal of Advanced Research"
+  volume: "45"
+  issue: "3"
+  pages: "234-256"
+  year: 2024
+  url: "https://doi.org/10.1000/example.2024.001"
+  pdf: ""  # Optional: link to PDF if available
+  type: "journal"  # journal, conference, workshop, preprint
+
+- title: "Exploring the Intersection of Theory and Practice in Modern Science"
+  authors:
+    - "Doe, J."
+    - "Williams, C."
+  journal: "Proceedings of the International Conference on Important Topics"
+  volume: ""
+  issue: ""
+  pages: "123-135"
+  year: 2024
+  url: "https://doi.org/10.1000/example.2024.002"
+  pdf: ""
+  type: "conference"
+
+- title: "Investigating Fundamental Questions Through Empirical Methods"
+  authors:
+    - "Doe, J."
+  journal: "Quarterly Review of Scholarly Work"
+  volume: "12"
+  issue: "2"
+  pages: "89-112"
+  year: 2023
+  url: "https://doi.org/10.1000/example.2023.001"
+  pdf: ""
+  type: "journal"
+
+- title: "A Preliminary Study on Emerging Phenomena in Complex Networks"
+  authors:
+    - "Smith, A."
+    - "Doe, J."
+  journal: "Workshop on New Directions in Research (NeurIPS Workshop)"
+  volume: ""
+  issue: ""
+  pages: ""
+  year: 2023
+  url: "#"
+  pdf: "/assets/pdfs/workshop_paper_2023.pdf"  # Example local PDF
+  type: "workshop"
+
+- title: "Rethinking Classical Assumptions in Light of New Evidence"
+  authors:
+    - "Doe, J."
+    - "Garcia, M."
+    - "Lee, K."
+  journal: "arXiv preprint"
+  volume: "arXiv:2023.12345"
+  issue: ""
+  pages: ""
+  year: 2023
+  url: "https://arxiv.org/abs/2023.12345"
+  pdf: ""
+  type: "preprint"

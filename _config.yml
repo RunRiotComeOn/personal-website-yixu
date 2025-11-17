@@ -1,0 +1,55 @@
+# _config.yml - Jekyll Configuration
+# Oil Painting Aesthetic Personal Academic Website
+
+# Personal Information (Edit these with your details)
+title: "Yixu Huang | Undergraduate Researcher"
+author: "Yixu Huang"
+description: "An undergraduate student at Fudan University specializing in Large Language Models, Vision-Language Models, and Embodied Intelligence."
+
+# Contact Information
+email: "yixuhuang23@m.fudan.edu.cn"
+github: "RunRiotComeOn"
+# google_scholar: "your-scholar-id"      # Optional - remove if not needed
+# orcid: "0000-0000-0000-0000"          # Optional - remove if not needed
+
+# Profile Image
+profile_image: "/assets/images/profile.jpg"  # Add your photo here
+
+# Extended Bio (shown on home page)
+bio_extended: |
+  I am an undergraduate student at Fudan University, pursuing my Bachelor's degree
+  with a focus on artificial intelligence and machine learning.
+
+  My research interests lie at the intersection of Large Language Models (LLMs),
+  Vision-Language Models (VLMs), and Embodied Intelligence. I am currently working
+  under the supervision of [Professor Muhao Chen](https://muhaochen.github.io/) in UC Davis,
+  conducting research on Vision-Language Models and their applications.
+
+  Through my research, I aim to advance the understanding of how AI systems can better
+  perceive, reason, and interact with the visual world.
+
+# Jekyll Settings
+markdown: kramdown
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Build Settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .gitignore
+
+# URL Settings (leave blank for local development)
+url: "https://RunRiotComeOn.github.io"
+baseurl: "/personal-website-yixu" 
+
+# Collections (for future expansion)
+# collections:
+#   projects:
+#     output: true
+#     permalink: /projects/:name/

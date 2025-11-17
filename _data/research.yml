@@ -1,0 +1,33 @@
+# _data/research.yml
+# Your Research Experience (in reverse chronological order)
+
+- position: "Research Assistant"
+  institution: "University of California, Davis"
+  group: "[LUKA Lab](https://luka-group.github.io/)"
+  location: "Davis, CA, USA"
+  start_year: 2025
+  end_year: "Present"
+  description: |
+    Working under the supervision of [Professor Muhao Chen](https://muhaochen.github.io/)
+    in the LUKA (Language Understanding and Knowledge Acquisition) group, focusing on
+    Vision-Language Models (VLMs) and their applications.
+
+    - Conducting research on multimodal learning and vision-language understanding
+    - Developing and evaluating VLM architectures for improved visual reasoning
+    - Analyzing model performance on various vision-language tasks
+    - Collaborating with lab members on cutting-edge VLM research
+
+- position: "Research Assistant"
+  institution: "Fudan University"
+  group: "[YuanST Lab](https://yuanstlab.github.io/)"
+  location: "Shanghai, China"
+  start_year: 2024
+  end_year: "Present"
+  description: |
+    Working under the supervision of Professor Zhiyuan Yuan on spatial omics research,
+    exploring the intersection of computational biology and machine learning.
+
+    - Conducting research on spatial transcriptomics and multi-omics data analysis
+    - Developing computational methods for spatial omics data integration
+    - Applying machine learning techniques to biological data analysis
+    - Contributing to the development of tools for spatial biology research

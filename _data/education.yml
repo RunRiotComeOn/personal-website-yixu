@@ -1,0 +1,18 @@
+# _data/education.yml
+# Your Educational Background (in reverse chronological order)
+
+- degree: "Exchange Student in Computer Science"
+  institution: "University of California, Davis"
+  location: "Davis, CA, USA"
+  start_year: 2025
+  end_year: "2025 (Fall Quarter)"
+  notes: "Exchange program focusing on advanced computer science coursework."
+  gpa: ""
+
+- degree: "B.S. in Data Science and Big Data Technology"
+  institution: "Fudan University"
+  location: "Shanghai, China"
+  start_year: 2023
+  end_year: "Present"
+  notes: "School of Data Science. Focus on Large Language Models, Vision-Language Models, and Embodied Intelligence."
+  gpa: ""  # Add your GPA if you'd like

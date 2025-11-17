@@ -1,0 +1,908 @@
+/* ===================================================================
+   OIL PAINTING AESTHETIC - PERSONAL ACADEMIC WEBSITE
+   Classic, warm, textured design inspired by 16-18th century European art
+   =================================================================== */
+
+/* --- CSS Variables (Oil Painting Palette) --- */
+:root {
+  /* Canvas Background Colors */
+  --canvas-ivory: #FBFBF0;
+  --canvas-parchment: #F5F5DC;
+  --canvas-linen: #FAF0E6;
+
+  /* Ink/Text Colors (avoiding pure black) */
+  --ink-sienna: #3D2B1F;           /* Deep brown - primary text */
+  --ink-payne-grey: #36454F;       /* Deep grey-blue - alternative */
+  --ink-warm-black: #2B2520;       /* Warm almost-black */
+
+  /* Accent Colors (from classical oil paintings) */
+  --accent-venetian-red: #8A3324;  /* Deep red/ochre */
+  --accent-viridian: #004953;      /* Deep teal */
+  --accent-old-gold: #CFB53B;      /* Antique gold */
+  --accent-burnt-umber: #8A3324;   /* Rich brown-red */
+
+  /* Frame and Border Colors */
+  --frame-light: #DED8C0;          /* Light taupe border */
+  --frame-dark: #A89968;           /* Aged gold frame */
+  --shadow-soft: rgba(61, 43, 31, 0.08);
+  --shadow-frame: rgba(0, 0, 0, 0.12);
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Merriweather', Georgia, serif;
+
+  /* Spacing (using classical proportions) */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
+}
+
+/* --- Reset & Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--canvas-ivory);
+  /* Canvas texture overlay */
+  background-image: url('/assets/images/canvas-texture.png');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: var(--ink-sienna);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--ink-sienna);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: 2.75rem;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--frame-light);
+  padding-bottom: var(--spacing-xs);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: var(--spacing-md);
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Links - Oil painting accent color */
+a {
+  color: var(--accent-venetian-red);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--accent-burnt-umber);
+  border-bottom-color: var(--accent-burnt-umber);
+}
+
+a:focus {
+  outline: 2px solid var(--accent-venetian-red);
+  outline-offset: 2px;
+}
+
+/* --- Layout: The Canvas & Frame --- */
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+}
+
+/* The "Frame" - Main content container */
+.content-frame {
+  max-width: 1000px;
+  width: 100%;
+  margin: var(--spacing-lg) auto;
+  padding: var(--spacing-xl);
+  background-color: var(--canvas-ivory);
+
+  /* Layered shadow effect (simulating picture frame depth) */
+  box-shadow:
+    0 1px 3px var(--shadow-soft),
+    0 4px 12px var(--shadow-frame),
+    0 0 0 1px var(--frame-light),
+    inset 0 0 0 8px var(--canvas-ivory),
+    inset 0 0 0 9px var(--frame-light);
+
+  border: 1px solid var(--frame-dark);
+  border-radius: 2px;
+  position: relative;
+}
+
+/* Optional: Corner ornaments (like gilded frame corners) */
+.content-frame::before,
+.content-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--frame-dark);
+  opacity: 0.3;
+}
+
+.content-frame::before {
+  top: 10px;
+  left: 10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.content-frame::after {
+  bottom: 10px;
+  right: 10px;
+  border-left: none;
+  border-top: none;
+}
+
+/* --- Navigation Header --- */
+.site-header {
+  margin-bottom: var(--spacing-md);
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--frame-light);
+}
+
+.nav-home {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-sienna);
+  border: none;
+}
+
+.nav-home:hover {
+  color: var(--accent-venetian-red);
+  border: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ink-sienna);
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  padding: var(--spacing-xs) 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-venetian-red);
+  border-bottom-color: var(--accent-venetian-red);
+}
+
+/* --- Footer --- */
+.site-footer {
+  margin-top: auto;
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--frame-light);
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: var(--ink-payne-grey);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--ink-payne-grey);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-venetian-red);
+  border: none;
+}
+
+.footer-links svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Home Page (Hero Section) --- */
+.hero-canvas {
+  padding: var(--spacing-xl) 0;
+  border-bottom: 2px solid var(--frame-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Two-column layout for hero section */
+.hero-two-column {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+}
+
+/* Left column: Profile image */
+.hero-image-column {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 8px;
+  border: 4px solid var(--frame-light);
+  box-shadow: 0 4px 12px var(--shadow-frame);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--shadow-frame);
+}
+
+.profile-placeholder {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, var(--frame-light) 0%, var(--canvas-parchment) 100%);
+  border: 2px dashed var(--frame-dark);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-md);
+  color: var(--ink-payne-grey);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Contact links below profile image */
+.profile-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.profile-contact-links a {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(222, 216, 192, 0.3);
+  border: 1px solid var(--frame-light);
+  border-radius: 6px;
+  color: var(--ink-sienna);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border-bottom: 1px solid var(--frame-light);
+}
+
+.profile-contact-links a:hover {
+  background: rgba(138, 51, 36, 0.1);
+  border-color: var(--accent-venetian-red);
+  transform: translateX(4px);
+}
+
+.profile-contact-links svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Right column: Bio content */
+.hero-content-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-style: italic;
+  margin-bottom: var(--spacing-sm);
+  color: var(--ink-warm-black);
+  letter-spacing: -0.03em;
+  text-align: left;
+}
+
+.hero-tagline {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--ink-payne-grey);
+  margin-bottom: var(--spacing-lg);
+  text-align: left;
+}
+
+.bio-extended {
+  margin-top: var(--spacing-md);
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* --- Decorative Divider --- */
+.decorative-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--frame-light) 20%,
+    var(--frame-light) 80%,
+    transparent
+  );
+  margin: var(--spacing-lg) 0;
+  position: relative;
+}
+
+.decorative-divider::after {
+  content: '❦';  /* Fleuron ornament */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--canvas-ivory);
+  padding: 0 var(--spacing-sm);
+  color: var(--frame-dark);
+  font-size: 1.25rem;
+}
+
+/* --- Home Sections --- */
+.home-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.view-all {
+  text-align: right;
+  margin-top: var(--spacing-md);
+  font-style: italic;
+}
+
+.view-all a {
+  font-size: 0.95rem;
+}
+
+/* --- Page Header --- */
+.page-header {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--frame-light);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--ink-payne-grey);
+}
+
+/* --- Timeline (Education Page) --- */
+.timeline {
+  position: relative;
+  padding-left: var(--spacing-lg);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--frame-light),
+    var(--accent-venetian-red) 20%,
+    var(--accent-venetian-red) 80%,
+    var(--frame-light)
+  );
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: calc(-1 * var(--spacing-lg) + 2px);
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-venetian-red);
+  border: 3px solid var(--canvas-ivory);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--accent-venetian-red);
+}
+
+.timeline-content {
+  padding: var(--spacing-sm);
+  background: rgba(251, 251, 240, 0.5);
+  border-left: 3px solid var(--frame-light);
+  padding-left: var(--spacing-md);
+}
+
+.degree-title {
+  font-size: 1.375rem;
+  color: var(--ink-sienna);
+  margin-bottom: var(--spacing-xs);
+}
+
+.institution {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--accent-venetian-red);
+  margin-bottom: 0.25rem;
+}
+
+.location {
+  font-size: 0.95rem;
+  color: var(--ink-payne-grey);
+  font-style: italic;
+}
+
+.dates {
+  font-size: 0.95rem;
+  color: var(--ink-payne-grey);
+  font-variant-numeric: oldstyle-nums;
+  margin-bottom: var(--spacing-sm);
+}
+
+.notes {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: var(--spacing-sm);
+}
+
+.gpa {
+  font-size: 0.875rem;
+  color: var(--ink-payne-grey);
+  margin-top: var(--spacing-xs);
+}
+
+/* --- Research Experience --- */
+.research-list {
+  margin-top: var(--spacing-lg);
+}
+
+.research-item {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-md);
+  background: rgba(245, 245, 220, 0.3);
+  border-left: 4px solid var(--accent-venetian-red);
+  border-radius: 2px;
+}
+
+.position-title {
+  font-size: 1.5rem;
+  color: var(--ink-sienna);
+  margin-bottom: var(--spacing-xs);
+}
+
+.research-description {
+  margin-top: var(--spacing-md);
+  font-size: 0.975rem;
+  line-height: 1.7;
+}
+
+.research-description ul {
+  margin-top: var(--spacing-sm);
+  padding-left: var(--spacing-lg);
+  list-style-type: none;
+}
+
+.research-description ul li {
+  position: relative;
+  margin-bottom: var(--spacing-xs);
+  padding-left: var(--spacing-sm);
+}
+
+.research-description ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-venetian-red);
+  font-weight: bold;
+}
+
+.research-divider {
+  border: none;
+  height: 1px;
+  background: var(--frame-light);
+  margin: var(--spacing-lg) 0;
+}
+
+.research-preview {
+  padding: var(--spacing-md);
+  background: rgba(245, 245, 220, 0.3);
+  border-left: 4px solid var(--accent-venetian-red);
+}
+
+/* --- Publications --- */
+.publication-intro {
+  margin-bottom: var(--spacing-lg);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-payne-grey);
+}
+
+.publication-list {
+  margin-top: var(--spacing-lg);
+}
+
+.year-header {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent-venetian-red);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--frame-light);
+}
+
+.publication-item {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.3);
+  border-left: 3px solid var(--frame-light);
+  transition: all 0.2s ease;
+}
+
+.publication-item:hover {
+  border-left-color: var(--accent-venetian-red);
+  background: rgba(245, 245, 220, 0.4);
+}
+
+.pub-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ink-sienna);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.4;
+}
+
+.pub-authors {
+  font-size: 0.95rem;
+  color: var(--ink-payne-grey);
+  margin-bottom: 0.25rem;
+}
+
+.pub-venue {
+  font-size: 0.95rem;
+  color: var(--ink-sienna);
+  margin-bottom: var(--spacing-xs);
+}
+
+.pub-links {
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.pub-link {
+  color: var(--accent-venetian-red);
+  font-weight: 500;
+  border: none;
+}
+
+.pub-link:hover {
+  text-decoration: underline;
+  border: none;
+}
+
+.pub-type-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 3px;
+  background: var(--frame-light);
+  color: var(--ink-sienna);
+}
+
+.pub-type-badge.journal {
+  background: rgba(138, 51, 36, 0.15);
+  color: var(--accent-venetian-red);
+}
+
+.pub-type-badge.conference {
+  background: rgba(0, 73, 83, 0.15);
+  color: var(--accent-viridian);
+}
+
+.pub-type-badge.preprint {
+  background: rgba(207, 181, 59, 0.15);
+  color: #8A7730;
+}
+
+.publication-note {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: rgba(222, 216, 192, 0.3);
+  border-left: 3px solid var(--accent-old-gold);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--ink-payne-grey);
+}
+
+/* --- Contact Page --- */
+.contact-intro {
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.contact-item {
+  padding: var(--spacing-md);
+  background: rgba(245, 245, 220, 0.3);
+  border: 1px solid var(--frame-light);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.contact-item:hover {
+  border-color: var(--accent-venetian-red);
+  box-shadow: 0 2px 8px var(--shadow-soft);
+}
+
+.contact-item h3 {
+  font-size: 1.125rem;
+  margin-top: 0;
+  margin-bottom: var(--spacing-xs);
+  color: var(--accent-venetian-red);
+}
+
+.contact-item p {
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-note {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-payne-grey);
+}
+
+.office-info {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: rgba(251, 251, 240, 0.5);
+  border-left: 3px solid var(--accent-venetian-red);
+}
+
+.office-info h3 {
+  margin-top: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .site-wrapper {
+    padding: var(--spacing-sm);
+  }
+
+  .content-frame {
+    padding: var(--spacing-lg);
+    margin: var(--spacing-md) auto;
+  }
+
+  /* Hero section responsive */
+  .hero-two-column {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .hero-image-column {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .profile-image,
+  .profile-placeholder {
+    max-width: 240px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-tagline {
+    text-align: center;
+  }
+
+  .bio-extended {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .site-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .timeline {
+    padding-left: var(--spacing-md);
+  }
+
+  .timeline-marker {
+    left: calc(-1 * var(--spacing-md) + 2px);
+  }
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* --- Print Styles --- */
+@media print {
+  body {
+    background: white;
+    background-image: none;
+  }
+
+  .content-frame {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+
+  .site-nav,
+  .site-footer {
+    display: none;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .publication-item,
+  .research-item,
+  .timeline-item {
+    page-break-inside: avoid;
+  }
+}
+
+/* --- Accessibility Enhancements --- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Focus visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-venetian-red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Smooth scroll behavior */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
