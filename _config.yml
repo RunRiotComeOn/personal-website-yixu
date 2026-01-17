@@ -4,7 +4,7 @@
 # Personal Information (Edit these with your details)
 title: "Yixu Huang | Undergraduate Researcher"
 author: "Yixu Huang"
-description: "An undergraduate student at Fudan University specializing in Large Language Models, Vision-Language Models, and Embodied Intelligence."
+description: "An undergraduate student at Fudan University specializing in Large Language Models, Vision-Language Models, and agentic systems."
 
 # Contact Information
 email: "yixuhuang23@m.fudan.edu.cn"
@@ -21,7 +21,7 @@ bio_extended: |
   with a focus on artificial intelligence and machine learning.
 
   My research interests lie at the intersection of Large Language Models (LLMs),
-  Vision-Language Models (VLMs), and Embodied Intelligence. I am currently working
+  Vision-Language Models (VLMs), and agentic systems. I am currently working
   under the supervision of [Professor Muhao Chen](https://muhaochen.github.io/) in UC Davis,
   conducting research on Vision-Language Models and their applications.
 
