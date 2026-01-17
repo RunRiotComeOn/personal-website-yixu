@@ -12,17 +12,17 @@
     - Propose to adaptively allocate the thinking budgets based on the visual tasks difficulty, skipping reasoning steps for simpler queries.
     - Train the model via SFT and RL to dynamically select the optimal inference path (Direct, Perception-based, or Reasoning-based) by incentivizing correctness and penalizing excessive reasoning tokens through a strictly constrained reward function.
 
-- position: "Research Assistant @ Training-Free Transfer of Reasoning Abilities from LLMs to VLMs"
-  institution: "University of California, Davis"
-  group: "Advised by [Prof. Muhao Chen](https://muhaochen.github.io/)"
-  location: "Davis, CA, USA"
-  start_year: 2025
-  end_year: "Dec 2025"
-  description: |
-    - Contemporary VLMs underperform on many complex multimodal reasoning tasks because they fail to transfer the reasoning capabilities of their LLM backbones to multimodal domains.
-    - Propose to capture the reasoning capabilities via reasoning vectors in the activation space between the base LLM and the reasoning model, enabling an efficient, training-free transfer of reasoning capabilities to VLMs.
-    - The framework operates in two training-free phases: extracting the reasoning steering vector from activation differences, and then dynamically injecting this vector into the VLM's hidden states using an entropy-based layer selection mechanism to guide generation towards reasoning outputs.
-    - The method consistently yields performance gains (e.g., +8% on Geometry3K and +5% on ScienceQA) across VLM benchmarks and demonstrates superior out-of-distribution (OOD) generalization compared to other training-free method.
+# - position: "Research Assistant @ Training-Free Transfer of Reasoning Abilities from LLMs to VLMs"
+#   institution: "University of California, Davis"
+#   group: "Advised by [Prof. Muhao Chen](https://muhaochen.github.io/)"
+#   location: "Davis, CA, USA"
+#   start_year: 2025
+#   end_year: "Dec 2025"
+#   description: |
+#     - Contemporary VLMs underperform on many complex multimodal reasoning tasks because they fail to transfer the reasoning capabilities of their LLM backbones to multimodal domains.
+#     - Propose to capture the reasoning capabilities via reasoning vectors in the activation space between the base LLM and the reasoning model, enabling an efficient, training-free transfer of reasoning capabilities to VLMs.
+#     - The framework operates in two training-free phases: extracting the reasoning steering vector from activation differences, and then dynamically injecting this vector into the VLM's hidden states using an entropy-based layer selection mechanism to guide generation towards reasoning outputs.
+#     - The method consistently yields performance gains (e.g., +8% on Geometry3K and +5% on ScienceQA) across VLM benchmarks and demonstrates superior out-of-distribution (OOD) generalization compared to other training-free method.
 
 - position: "Research Assistant @ Super-Resolution Spatial Omics Benchmarking"
   institution: "Fudan University"
