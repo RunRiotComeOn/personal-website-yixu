@@ -1,0 +1,33 @@
+HOW TO ADD YOUR PROFILE IMAGE
+==============================
+
+To add your profile photo to the website:
+
+1. Prepare your photo:
+   - Recommended format: JPG or PNG
+   - Recommended dimensions: 600x800 pixels (portrait orientation)
+   - Or use aspect ratio 3:4 (e.g., 900x1200px)
+   - File size: Keep under 500KB for faster loading
+
+2. Rename your photo to: profile.jpg
+   (Or keep the name you prefer and update _config.yml accordingly)
+
+3. Place the file in this folder:
+   C:\Users\sophi\Desktop\Personal_website\assets\images\
+
+4. If you used a different filename, update _config.yml:
+   profile_image: "/assets/images/your-photo-name.jpg"
+
+5. Restart the Jekyll server (if running) to see changes:
+   - Stop: Ctrl+C
+   - Start: bundle exec jekyll serve
+
+TIPS:
+- Use a professional headshot or portrait photo
+- Ensure good lighting and a clean background
+- The photo will have a classic "oil painting" frame effect
+- On hover, the photo will have a subtle lift animation
+
+ALTERNATIVE:
+If you don't have a photo yet, the website will show a placeholder
+with instructions. This is perfectly fine for development!
